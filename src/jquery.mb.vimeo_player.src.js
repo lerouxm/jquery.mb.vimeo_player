@@ -634,10 +634,11 @@ var get_vimeo_videoID = function( url ) {
 		changeMovie: function( obj ) {
 
 			var vimeo_player = this.get( 0 );
-			vimeo_player.player.loadVideo( obj.url ).then( function( id ) {
+			jQuery( vimeo_player ).v_pause();
+			vimeo_player.player.loadVideo( obj.videoURL ).then( function( id ) {
 
-				jQuery( vimeo_player ).v_setState();
-
+				//jQuery( vimeo_player ).v_setState();
+				jQuery( vimeo_player ).v_play();
 
 			} )
 		},
